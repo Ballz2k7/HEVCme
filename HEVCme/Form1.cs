@@ -55,6 +55,12 @@ namespace HEVCme
             if (useNvidia.CheckState == CheckState.Checked)
             {
                 encodeCPU.CheckState = CheckState.Unchecked;
+                chkCRF.CheckState = CheckState.Unchecked;
+            }
+            if (useNvidia.CheckState == CheckState.Unchecked)
+            {
+                encodeCPU.CheckState = CheckState.Checked;
+                chkQp.CheckState = CheckState.Unchecked;
             }
         }
 
@@ -63,6 +69,31 @@ namespace HEVCme
             if (encodeCPU.CheckState == CheckState.Checked)
             {
                 useNvidia.CheckState = CheckState.Unchecked;
+                chkQp.CheckState = CheckState.Unchecked;
+            }
+            if (encodeCPU.CheckState == CheckState.Unchecked)
+            {
+                useNvidia.CheckState = CheckState.Checked;
+                chkCRF.CheckState = CheckState.Unchecked;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkCustomBr_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkCustomBr.CheckState == CheckState.Checked)
+            {
+                chkCRF.CheckState = CheckState.Unchecked;
+                chkQp.CheckState = CheckState.Unchecked;
             }
         }
     }
