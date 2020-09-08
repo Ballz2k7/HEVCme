@@ -38,23 +38,31 @@
             this.checkedFilesList = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textMaxVidBr = new System.Windows.Forms.TextBox();
+            this.textAvVidBr = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.chkCustomBr = new System.Windows.Forms.CheckBox();
+            this.crfVal = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cqVal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkCRF = new System.Windows.Forms.CheckBox();
+            this.chkQp = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.encodeCPU = new System.Windows.Forms.CheckBox();
             this.useNvidia = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.encodeCPU = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkQp = new System.Windows.Forms.CheckBox();
-            this.chkCRF = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cqVal = new System.Windows.Forms.TextBox();
-            this.crfVal = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.chkCustomBr = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.chkCopyAud = new System.Windows.Forms.CheckBox();
+            this.chkEncodeAud = new System.Windows.Forms.CheckBox();
+            this.chkAudCustomBr = new System.Windows.Forms.CheckBox();
+            this.textAudioBitrate = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -170,8 +178,16 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.textAudioBitrate);
+            this.tabPage2.Controls.Add(this.chkAudCustomBr);
+            this.tabPage2.Controls.Add(this.chkEncodeAud);
+            this.tabPage2.Controls.Add(this.chkCopyAud);
+            this.tabPage2.Controls.Add(this.textMaxVidBr);
+            this.tabPage2.Controls.Add(this.textAvVidBr);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.chkCustomBr);
@@ -193,101 +209,48 @@
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // useNvidia
+            // textMaxVidBr
             // 
-            this.useNvidia.AutoSize = true;
-            this.useNvidia.Checked = true;
-            this.useNvidia.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.useNvidia.Location = new System.Drawing.Point(22, 74);
-            this.useNvidia.Name = "useNvidia";
-            this.useNvidia.Size = new System.Drawing.Size(105, 17);
-            this.useNvidia.TabIndex = 0;
-            this.useNvidia.Text = "Nvidia Hardware";
-            this.useNvidia.UseVisualStyleBackColor = true;
-            this.useNvidia.CheckedChanged += new System.EventHandler(this.useNvidia_CheckedChanged);
+            this.textMaxVidBr.Location = new System.Drawing.Point(207, 285);
+            this.textMaxVidBr.Name = "textMaxVidBr";
+            this.textMaxVidBr.Size = new System.Drawing.Size(100, 20);
+            this.textMaxVidBr.TabIndex = 13;
             // 
-            // tabPage3
+            // textAvVidBr
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(645, 367);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Renaming";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.textAvVidBr.Location = new System.Drawing.Point(207, 245);
+            this.textAvVidBr.Name = "textAvVidBr";
+            this.textAvVidBr.Size = new System.Drawing.Size(100, 20);
+            this.textAvVidBr.TabIndex = 12;
             // 
-            // tabPage4
+            // label7
             // 
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(1);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage4.Size = new System.Drawing.Size(658, 367);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Convert";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(121, 288);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Maximum Bitrate";
             // 
-            // encodeCPU
+            // label6
             // 
-            this.encodeCPU.AutoSize = true;
-            this.encodeCPU.Location = new System.Drawing.Point(218, 74);
-            this.encodeCPU.Name = "encodeCPU";
-            this.encodeCPU.Size = new System.Drawing.Size(48, 17);
-            this.encodeCPU.TabIndex = 1;
-            this.encodeCPU.Text = "CPU";
-            this.encodeCPU.UseVisualStyleBackColor = true;
-            this.encodeCPU.CheckedChanged += new System.EventHandler(this.encodeCPU_CheckedChanged);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(121, 248);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Average Bitrate";
             // 
-            // label3
+            // chkCustomBr
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Choose your encoder settings";
-            // 
-            // chkQp
-            // 
-            this.chkQp.AutoSize = true;
-            this.chkQp.Checked = true;
-            this.chkQp.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkQp.Location = new System.Drawing.Point(22, 111);
-            this.chkQp.Name = "chkQp";
-            this.chkQp.Size = new System.Drawing.Size(78, 17);
-            this.chkQp.TabIndex = 3;
-            this.chkQp.Text = "CONSTQP";
-            this.chkQp.UseVisualStyleBackColor = true;
-            // 
-            // chkCRF
-            // 
-            this.chkCRF.AutoSize = true;
-            this.chkCRF.Location = new System.Drawing.Point(218, 111);
-            this.chkCRF.Name = "chkCRF";
-            this.chkCRF.Size = new System.Drawing.Size(47, 17);
-            this.chkCRF.TabIndex = 4;
-            this.chkCRF.Text = "CRF";
-            this.chkCRF.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "CQ Value (0-51)";
-            // 
-            // cqVal
-            // 
-            this.cqVal.Location = new System.Drawing.Point(107, 137);
-            this.cqVal.Name = "cqVal";
-            this.cqVal.Size = new System.Drawing.Size(24, 20);
-            this.cqVal.TabIndex = 6;
-            this.cqVal.Text = "23";
+            this.chkCustomBr.AutoSize = true;
+            this.chkCustomBr.Location = new System.Drawing.Point(124, 211);
+            this.chkCustomBr.Name = "chkCustomBr";
+            this.chkCustomBr.Size = new System.Drawing.Size(99, 17);
+            this.chkCustomBr.TabIndex = 9;
+            this.chkCustomBr.Text = "Custom Bitrates";
+            this.chkCustomBr.UseVisualStyleBackColor = true;
+            this.chkCustomBr.CheckedChanged += new System.EventHandler(this.chkCustomBr_CheckedChanged);
             // 
             // crfVal
             // 
@@ -306,48 +269,99 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "CRF Value (0-51)";
             // 
-            // chkCustomBr
+            // cqVal
             // 
-            this.chkCustomBr.AutoSize = true;
-            this.chkCustomBr.Location = new System.Drawing.Point(124, 211);
-            this.chkCustomBr.Name = "chkCustomBr";
-            this.chkCustomBr.Size = new System.Drawing.Size(99, 17);
-            this.chkCustomBr.TabIndex = 9;
-            this.chkCustomBr.Text = "Custom Bitrates";
-            this.chkCustomBr.UseVisualStyleBackColor = true;
-            this.chkCustomBr.CheckedChanged += new System.EventHandler(this.chkCustomBr_CheckedChanged);
+            this.cqVal.Location = new System.Drawing.Point(107, 137);
+            this.cqVal.Name = "cqVal";
+            this.cqVal.Size = new System.Drawing.Size(24, 20);
+            this.cqVal.TabIndex = 6;
+            this.cqVal.Text = "23";
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Average Bitrate";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "CQ Value (0-51)";
             // 
-            // label7
+            // chkCRF
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(121, 288);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Maximum Bitrate";
+            this.chkCRF.AutoSize = true;
+            this.chkCRF.Location = new System.Drawing.Point(218, 111);
+            this.chkCRF.Name = "chkCRF";
+            this.chkCRF.Size = new System.Drawing.Size(47, 17);
+            this.chkCRF.TabIndex = 4;
+            this.chkCRF.Text = "CRF";
+            this.chkCRF.UseVisualStyleBackColor = true;
+            this.chkCRF.CheckedChanged += new System.EventHandler(this.chkCRF_CheckedChanged);
             // 
-            // textBox1
+            // chkQp
             // 
-            this.textBox1.Location = new System.Drawing.Point(207, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
+            this.chkQp.AutoSize = true;
+            this.chkQp.Location = new System.Drawing.Point(22, 111);
+            this.chkQp.Name = "chkQp";
+            this.chkQp.Size = new System.Drawing.Size(78, 17);
+            this.chkQp.TabIndex = 3;
+            this.chkQp.Text = "CONSTQP";
+            this.chkQp.UseVisualStyleBackColor = true;
+            this.chkQp.CheckedChanged += new System.EventHandler(this.chkQp_CheckedChanged);
             // 
-            // textBox2
+            // label3
             // 
-            this.textBox2.Location = new System.Drawing.Point(207, 285);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 13;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(248, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Choose your encoder settings";
+            // 
+            // encodeCPU
+            // 
+            this.encodeCPU.AutoSize = true;
+            this.encodeCPU.Location = new System.Drawing.Point(218, 74);
+            this.encodeCPU.Name = "encodeCPU";
+            this.encodeCPU.Size = new System.Drawing.Size(48, 17);
+            this.encodeCPU.TabIndex = 1;
+            this.encodeCPU.Text = "CPU";
+            this.encodeCPU.UseVisualStyleBackColor = true;
+            this.encodeCPU.CheckedChanged += new System.EventHandler(this.encodeCPU_CheckedChanged);
+            // 
+            // useNvidia
+            // 
+            this.useNvidia.AutoSize = true;
+            this.useNvidia.Location = new System.Drawing.Point(22, 74);
+            this.useNvidia.Name = "useNvidia";
+            this.useNvidia.Size = new System.Drawing.Size(105, 17);
+            this.useNvidia.TabIndex = 0;
+            this.useNvidia.Text = "Nvidia Hardware";
+            this.useNvidia.UseVisualStyleBackColor = true;
+            this.useNvidia.CheckedChanged += new System.EventHandler(this.useNvidia_CheckedChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabPage3.Size = new System.Drawing.Size(658, 367);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Renaming";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(1);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabPage4.Size = new System.Drawing.Size(658, 367);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Convert";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -357,6 +371,82 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Convert";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // chkCopyAud
+            // 
+            this.chkCopyAud.AutoSize = true;
+            this.chkCopyAud.Location = new System.Drawing.Point(452, 74);
+            this.chkCopyAud.Name = "chkCopyAud";
+            this.chkCopyAud.Size = new System.Drawing.Size(80, 17);
+            this.chkCopyAud.TabIndex = 14;
+            this.chkCopyAud.Text = "Copy Audio";
+            this.chkCopyAud.UseVisualStyleBackColor = true;
+            this.chkCopyAud.CheckedChanged += new System.EventHandler(this.chkCopyAud_CheckedChanged);
+            // 
+            // chkEncodeAud
+            // 
+            this.chkEncodeAud.AutoSize = true;
+            this.chkEncodeAud.Location = new System.Drawing.Point(452, 111);
+            this.chkEncodeAud.Name = "chkEncodeAud";
+            this.chkEncodeAud.Size = new System.Drawing.Size(133, 17);
+            this.chkEncodeAud.TabIndex = 15;
+            this.chkEncodeAud.Text = "Encode Audio To AAC";
+            this.chkEncodeAud.UseVisualStyleBackColor = true;
+            this.chkEncodeAud.CheckedChanged += new System.EventHandler(this.chkEncodeAud_CheckedChanged);
+            // 
+            // chkAudCustomBr
+            // 
+            this.chkAudCustomBr.AutoSize = true;
+            this.chkAudCustomBr.Location = new System.Drawing.Point(452, 211);
+            this.chkAudCustomBr.Name = "chkAudCustomBr";
+            this.chkAudCustomBr.Size = new System.Drawing.Size(94, 17);
+            this.chkAudCustomBr.TabIndex = 16;
+            this.chkAudCustomBr.Text = "Custom Bitrate";
+            this.chkAudCustomBr.UseVisualStyleBackColor = true;
+            this.chkAudCustomBr.CheckedChanged += new System.EventHandler(this.chkAudCustomBr_CheckedChanged);
+            // 
+            // textAudioBitrate
+            // 
+            this.textAudioBitrate.Location = new System.Drawing.Point(452, 261);
+            this.textAudioBitrate.Name = "textAudioBitrate";
+            this.textAudioBitrate.Size = new System.Drawing.Size(91, 20);
+            this.textAudioBitrate.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(449, 245);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Audio Bitrate";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(313, 248);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "kbps";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(313, 288);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "kbps";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(549, 264);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "kbps";
             // 
             // Form1
             // 
@@ -401,12 +491,20 @@
         private System.Windows.Forms.CheckBox chkQp;
         private System.Windows.Forms.TextBox crfVal;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textMaxVidBr;
+        private System.Windows.Forms.TextBox textAvVidBr;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkCustomBr;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textAudioBitrate;
+        private System.Windows.Forms.CheckBox chkAudCustomBr;
+        private System.Windows.Forms.CheckBox chkEncodeAud;
+        private System.Windows.Forms.CheckBox chkCopyAud;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }
 

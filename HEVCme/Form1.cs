@@ -54,13 +54,18 @@ namespace HEVCme
         {
             if (useNvidia.CheckState == CheckState.Checked)
             {
+                chkQp.Enabled = true;
                 encodeCPU.CheckState = CheckState.Unchecked;
                 chkCRF.CheckState = CheckState.Unchecked;
+                chkCRF.Enabled = false;
             }
-            if (useNvidia.CheckState == CheckState.Unchecked)
+            if(useNvidia.CheckState == CheckState.Unchecked)
             {
+                chkCRF.Enabled = true;
                 encodeCPU.CheckState = CheckState.Checked;
                 chkQp.CheckState = CheckState.Unchecked;
+                chkQp.Enabled = false;
+
             }
         }
 
@@ -94,6 +99,73 @@ namespace HEVCme
             {
                 chkCRF.CheckState = CheckState.Unchecked;
                 chkQp.CheckState = CheckState.Unchecked;
+            }
+        }
+
+        private void chkQp_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkQp.CheckState == CheckState.Checked)
+            {
+                chkCRF.CheckState = CheckState.Unchecked;
+                chkCustomBr.CheckState = CheckState.Unchecked;
+            }
+        }
+
+        private void chkCRF_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkCRF.CheckState == CheckState.Checked)
+            {
+                chkQp.CheckState = CheckState.Unchecked;
+                chkCustomBr.CheckState = CheckState.Unchecked;
+            }
+        }
+
+        private void chkCopyAud_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkCopyAud.CheckState == CheckState.Checked)
+            {
+                chkAudCustomBr.CheckState = CheckState.Unchecked;
+                chkEncodeAud.CheckState = CheckState.Unchecked;
+                chkEncodeAud.Enabled = false;
+                chkAudCustomBr.Enabled = false;
+            }
+            if (chkCopyAud.CheckState == CheckState.Unchecked)
+            {
+                chkAudCustomBr.CheckState = CheckState.Unchecked;
+                chkEncodeAud.CheckState = CheckState.Unchecked;
+                chkEncodeAud.Enabled = true;
+                chkAudCustomBr.Enabled = true;
+            }
+        }
+
+        private void chkEncodeAud_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkEncodeAud.CheckState == CheckState.Checked)
+            {
+                chkCopyAud.CheckState = CheckState.Unchecked;
+                chkCopyAud.Enabled = false;
+            }
+            if (chkEncodeAud.CheckState == CheckState.Unchecked)
+            {
+                chkCopyAud.CheckState = CheckState.Unchecked;
+                chkCopyAud.Enabled = true;
+            }
+        }
+
+        private void chkAudCustomBr_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkAudCustomBr.CheckState == CheckState.Checked)
+            {
+                chkCopyAud.CheckState = CheckState.Unchecked;
+                chkCopyAud.Enabled = false;
+                chkEncodeAud.CheckState = CheckState.Checked;
+            }
+            if (chkAudCustomBr.CheckState == CheckState.Unchecked)
+            {
+                chkCopyAud.CheckState = CheckState.Unchecked;
+                chkCopyAud.Enabled = true;
+                chkEncodeAud.CheckState = CheckState.Checked;
+                chkEncodeAud.CheckState = CheckState.Unchecked;
             }
         }
     }
