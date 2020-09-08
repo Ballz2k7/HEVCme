@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,7 +19,19 @@ namespace HEVCme
         {
             InitializeComponent();
         }
-
+        private void convertIt(string ffmpegsetup)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.CreateNoWindow = false;
+            startInfo.UseShellExecute = false;
+            startInfo.FileName = "ffmpeg.exe";
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.Arguments = ffmpegsetup;
+            using (Process exeProcess = Process.Start(startInfo))
+            {
+                exeProcess.WaitForExit();
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if ((findAvi.CheckState == CheckState.Unchecked) && (findMkv.CheckState == CheckState.Unchecked) && (findMp4.CheckState == CheckState.Unchecked))
@@ -167,6 +181,47 @@ namespace HEVCme
                 chkEncodeAud.CheckState = CheckState.Checked;
                 chkEncodeAud.CheckState = CheckState.Unchecked;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string ffargs = "";
+            if ((useNvidia.CheckState == CheckState.Unchecked) && (encodeCPU.CheckState == CheckState.Unchecked))
+            {
+                MessageBox.Show("You haven't selected either Nvidia or CPU!");
+                return;
+            }
+            if ((chkCRF.CheckState == CheckState.Unchecked) && (chkQp.CheckState == CheckState.Unchecked) && (chkCustomBr.CheckState == CheckState.Unchecked))
+            {
+                MessageBox.Show("You havent selected an encoding methos (CONSTQP, CRF, Custom Bitrate)");
+                return;
+            }
+            if((chkCustomBr.CheckState == CheckState.Checked) && (textAvVidBr.Text == "") || (textMaxVidBr.Text == ""))
+            {
+                MessageBox.Show("You have selected a custom bitrate but your bitrate box is empty!");
+                return;
+            }
+            if (useNvidia.CheckState == CheckState.Checked)
+            {
+                ffargs += "-c:v hevc_nvenc ";
+            }
+            if(encodeCPU.CheckState == CheckState.Checked)
+            {
+                ffargs += "-c:v libx265 ";
+            }
+            if(chkQp.CheckState == CheckState.Checked)
+            {
+                ffargs += "-rc constqp -cq " + cqVal.Text + " -rc-lookahead 32 -g 600 ";
+            }
+            if(chkCRF.CheckState == CheckState.Checked)
+            {
+                ffargs += "";
+            }
+            if((chkCustomBr.CheckState == CheckState.Checked) && (useNvidia.CheckState == CheckState.Checked))
+            {
+                ffargs += "-rc vbr_hq -b:v " + textAvVidBr.Text + "k -maxrate:v " + textMaxVidBr.Text + "k -rc-lookahead 32 -g 600 ";
+            }
+            MessageBox.Show(ffargs);
         }
     }
 }

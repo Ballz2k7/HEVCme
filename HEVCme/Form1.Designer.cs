@@ -54,7 +54,7 @@
             this.useNvidia = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.butConvert = new System.Windows.Forms.Button();
             this.chkCopyAud = new System.Windows.Forms.CheckBox();
             this.chkEncodeAud = new System.Windows.Forms.CheckBox();
             this.chkAudCustomBr = new System.Windows.Forms.CheckBox();
@@ -353,7 +353,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.butConvert);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage4.Name = "tabPage4";
@@ -363,14 +363,15 @@
             this.tabPage4.Text = "Convert";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // butConvert
             // 
-            this.button2.Location = new System.Drawing.Point(408, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(211, 171);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Convert";
-            this.button2.UseVisualStyleBackColor = true;
+            this.butConvert.Location = new System.Drawing.Point(408, 59);
+            this.butConvert.Name = "butConvert";
+            this.butConvert.Size = new System.Drawing.Size(211, 171);
+            this.butConvert.TabIndex = 0;
+            this.butConvert.Text = "Convert";
+            this.butConvert.UseVisualStyleBackColor = true;
+            this.butConvert.Click += new System.EventHandler(this.button2_Click);
             // 
             // chkCopyAud
             // 
@@ -496,7 +497,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkCustomBr;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button butConvert;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textAudioBitrate;
         private System.Windows.Forms.CheckBox chkAudCustomBr;
