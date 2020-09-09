@@ -63,9 +63,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.chkCopySubs = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,6 +183,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chkCopySubs);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
@@ -211,14 +217,14 @@
             // 
             // textMaxVidBr
             // 
-            this.textMaxVidBr.Location = new System.Drawing.Point(207, 285);
+            this.textMaxVidBr.Location = new System.Drawing.Point(207, 253);
             this.textMaxVidBr.Name = "textMaxVidBr";
             this.textMaxVidBr.Size = new System.Drawing.Size(100, 20);
             this.textMaxVidBr.TabIndex = 13;
             // 
             // textAvVidBr
             // 
-            this.textAvVidBr.Location = new System.Drawing.Point(207, 245);
+            this.textAvVidBr.Location = new System.Drawing.Point(207, 213);
             this.textAvVidBr.Name = "textAvVidBr";
             this.textAvVidBr.Size = new System.Drawing.Size(100, 20);
             this.textAvVidBr.TabIndex = 12;
@@ -226,7 +232,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(121, 288);
+            this.label7.Location = new System.Drawing.Point(121, 256);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 13);
             this.label7.TabIndex = 11;
@@ -235,7 +241,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 248);
+            this.label6.Location = new System.Drawing.Point(121, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 10;
@@ -244,7 +250,7 @@
             // chkCustomBr
             // 
             this.chkCustomBr.AutoSize = true;
-            this.chkCustomBr.Location = new System.Drawing.Point(124, 211);
+            this.chkCustomBr.Location = new System.Drawing.Point(124, 179);
             this.chkCustomBr.Name = "chkCustomBr";
             this.chkCustomBr.Size = new System.Drawing.Size(99, 17);
             this.chkCustomBr.TabIndex = 9;
@@ -342,6 +348,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage3.Name = "tabPage3";
@@ -398,7 +407,7 @@
             // chkAudCustomBr
             // 
             this.chkAudCustomBr.AutoSize = true;
-            this.chkAudCustomBr.Location = new System.Drawing.Point(452, 211);
+            this.chkAudCustomBr.Location = new System.Drawing.Point(452, 179);
             this.chkAudCustomBr.Name = "chkAudCustomBr";
             this.chkAudCustomBr.Size = new System.Drawing.Size(94, 17);
             this.chkAudCustomBr.TabIndex = 16;
@@ -408,7 +417,7 @@
             // 
             // textAudioBitrate
             // 
-            this.textAudioBitrate.Location = new System.Drawing.Point(452, 261);
+            this.textAudioBitrate.Location = new System.Drawing.Point(452, 229);
             this.textAudioBitrate.Name = "textAudioBitrate";
             this.textAudioBitrate.Size = new System.Drawing.Size(91, 20);
             this.textAudioBitrate.TabIndex = 17;
@@ -416,7 +425,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(449, 245);
+            this.label8.Location = new System.Drawing.Point(449, 213);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 18;
@@ -425,7 +434,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(313, 248);
+            this.label9.Location = new System.Drawing.Point(313, 216);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
             this.label9.TabIndex = 19;
@@ -434,7 +443,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(313, 288);
+            this.label10.Location = new System.Drawing.Point(313, 256);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 13);
             this.label10.TabIndex = 20;
@@ -443,11 +452,51 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(549, 264);
+            this.label11.Location = new System.Drawing.Point(549, 232);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 21;
             this.label11.Text = "kbps";
+            // 
+            // chkCopySubs
+            // 
+            this.chkCopySubs.AutoSize = true;
+            this.chkCopySubs.Location = new System.Drawing.Point(452, 294);
+            this.chkCopySubs.Name = "chkCopySubs";
+            this.chkCopySubs.Size = new System.Drawing.Size(107, 17);
+            this.chkCopySubs.TabIndex = 22;
+            this.chkCopySubs.Text = "Copy All Subtitles";
+            this.chkCopySubs.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(110, 38);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(422, 31);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Renaming still to be completed.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(90, 200);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(462, 31);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Output filename will be the original";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(103, 231);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(436, 31);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "with _converted.mkv on the end.";
             // 
             // Form1
             // 
@@ -464,6 +513,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -506,6 +557,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox chkCopySubs;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 

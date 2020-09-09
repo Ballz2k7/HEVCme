@@ -196,32 +196,66 @@ namespace HEVCme
                 MessageBox.Show("You havent selected an encoding methos (CONSTQP, CRF, Custom Bitrate)");
                 return;
             }
-            if((chkCustomBr.CheckState == CheckState.Checked) && (textAvVidBr.Text == "") || (textMaxVidBr.Text == ""))
+            if((chkCustomBr.CheckState == CheckState.Checked) && ((textAvVidBr.Text == "") || (textMaxVidBr.Text == "")))
             {
                 MessageBox.Show("You have selected a custom bitrate but your bitrate box is empty!");
                 return;
             }
-            if (useNvidia.CheckState == CheckState.Checked)
+            if ((useNvidia.CheckState == CheckState.Checked) && (chkQp.CheckState == CheckState.Checked))
             {
-                ffargs += "-c:v hevc_nvenc ";
+                ffargs += "-c:v hevc_nvenc -rc constqp -cq " + cqVal.Text + " -rc-lookahead 32 -g 600 ";
             }
-            if(encodeCPU.CheckState == CheckState.Checked)
+            if ((encodeCPU.CheckState == CheckState.Checked) && (chkCRF.CheckState == CheckState.Checked))
             {
-                ffargs += "-c:v libx265 ";
+                ffargs += "-c:v libx265 -crf " + crfVal.Text + " -x265-params rc-lookahead=32:intra-refresh=1:ctu=32:ref=1:bframes=0:keyint=150:min-keyint=150:aq-mode=2:aq-strength=1.0:no-aq-motion=1:qg-size=16:no-cutree=1 ";
             }
-            if(chkQp.CheckState == CheckState.Checked)
+            if ((useNvidia.CheckState == CheckState.Checked) && (chkCustomBr.CheckState == CheckState.Checked))
             {
-                ffargs += "-rc constqp -cq " + cqVal.Text + " -rc-lookahead 32 -g 600 ";
+                ffargs += "-c:v hevc_nvenc -rc vbr_hq -b:v " + textAvVidBr.Text + "k -maxrate:v " + textMaxVidBr.Text + "k -rc-lookahead 32 -g 600 ";
             }
-            if(chkCRF.CheckState == CheckState.Checked)
+            if ((encodeCPU.CheckState == CheckState.Checked) && (chkCustomBr.CheckState == CheckState.Checked))
             {
-                ffargs += "";
+                ffargs += "-c:v libx265 -b:v " + textAvVidBr.Text + "k -maxrate:v " + textMaxVidBr.Text + "k -x265-params rc-lookahead=32:intra-refresh=1:ctu=32:ref=1:bframes=0:keyint=150:min-keyint=150:aq-mode=2:aq-strength=1.0:no-aq-motion=1:qg-size=16:no-cutree=1 ";
             }
-            if((chkCustomBr.CheckState == CheckState.Checked) && (useNvidia.CheckState == CheckState.Checked))
+            if (chkCopyAud.CheckState == CheckState.Checked)
             {
-                ffargs += "-rc vbr_hq -b:v " + textAvVidBr.Text + "k -maxrate:v " + textMaxVidBr.Text + "k -rc-lookahead 32 -g 600 ";
+                ffargs += "-c:a copy ";
             }
-            MessageBox.Show(ffargs);
+            if ((chkAudCustomBr.CheckState == CheckState.Checked) && (textAudioBitrate.Text == "") && (chkEncodeAud.CheckState == CheckState.Checked))
+            {
+                MessageBox.Show("You haven't enterted an audio bitrate");
+                return;
+            }
+            if ((chkAudCustomBr.CheckState == CheckState.Checked) && (chkEncodeAud.CheckState == CheckState.Checked))
+            {
+            ffargs += "-c:a aac -b:a " + textAudioBitrate.Text + "k ";
+            }
+            if ((chkAudCustomBr.CheckState == CheckState.Unchecked) && (chkEncodeAud.CheckState == CheckState.Checked))
+            {
+                ffargs += "-c:a aac ";
+            }
+            if (chkCopySubs.CheckState == CheckState.Checked)
+            {
+                ffargs += "-c:s copy ";
+            }
+            ArrayList selectedFiles = new ArrayList();
+
+            for(int i=0; i < checkedFilesList.Items.Count; i++)
+                if (checkedFilesList.GetItemChecked(i))
+                {
+                    selectedFiles.Add(checkedFilesList.Items[i].ToString());
+                }
+            if (selectedFiles.Count < 1)
+            {
+                MessageBox.Show("You haven't selected any files!!!");
+                return;
+            } else
+            {
+                for (int j=0; j < selectedFiles.Count; j++)
+                {
+                    convertIt("-n -i \"" + selectedFiles[j] + "\" " + ffargs + "\"" + selectedFiles[j] + "_converted.mkv\"");
+                }
+            }
         }
     }
 }
