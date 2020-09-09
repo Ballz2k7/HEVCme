@@ -257,5 +257,21 @@ namespace HEVCme
                 }
             }
         }
+
+        private void butSelectAll_Click(object sender, EventArgs e)
+        {
+            for(int a=0; a < checkedFilesList.Items.Count; a++)
+            {
+                checkedFilesList.SetItemChecked(a, true);
+            }
+        }
+
+        private void butSelectNone_Click(object sender, EventArgs e)
+        {
+            for (int a = 0; a < checkedFilesList.Items.Count; a++)
+            {
+                checkedFilesList.SetItemChecked(a, false);
+            }
+        }
     }
 }

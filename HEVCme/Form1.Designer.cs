@@ -38,6 +38,15 @@
             this.checkedFilesList = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chkCopySubs = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textAudioBitrate = new System.Windows.Forms.TextBox();
+            this.chkAudCustomBr = new System.Windows.Forms.CheckBox();
+            this.chkEncodeAud = new System.Windows.Forms.CheckBox();
+            this.chkCopyAud = new System.Windows.Forms.CheckBox();
             this.textMaxVidBr = new System.Windows.Forms.TextBox();
             this.textAvVidBr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,20 +62,13 @@
             this.encodeCPU = new System.Windows.Forms.CheckBox();
             this.useNvidia = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.butConvert = new System.Windows.Forms.Button();
-            this.chkCopyAud = new System.Windows.Forms.CheckBox();
-            this.chkEncodeAud = new System.Windows.Forms.CheckBox();
-            this.chkAudCustomBr = new System.Windows.Forms.CheckBox();
-            this.textAudioBitrate = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.chkCopySubs = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.butSelectAll = new System.Windows.Forms.Button();
+            this.butSelectNone = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -89,6 +91,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.butSelectNone);
+            this.tabPage1.Controls.Add(this.butSelectAll);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.findMkv);
@@ -166,7 +170,7 @@
             this.checkedFilesList.Location = new System.Drawing.Point(2, 134);
             this.checkedFilesList.Margin = new System.Windows.Forms.Padding(1);
             this.checkedFilesList.Name = "checkedFilesList";
-            this.checkedFilesList.Size = new System.Drawing.Size(639, 214);
+            this.checkedFilesList.Size = new System.Drawing.Size(639, 184);
             this.checkedFilesList.TabIndex = 1;
             // 
             // button1
@@ -214,6 +218,92 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chkCopySubs
+            // 
+            this.chkCopySubs.AutoSize = true;
+            this.chkCopySubs.Location = new System.Drawing.Point(452, 294);
+            this.chkCopySubs.Name = "chkCopySubs";
+            this.chkCopySubs.Size = new System.Drawing.Size(107, 17);
+            this.chkCopySubs.TabIndex = 22;
+            this.chkCopySubs.Text = "Copy All Subtitles";
+            this.chkCopySubs.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(549, 232);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "kbps";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(313, 256);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "kbps";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(313, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "kbps";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(449, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Audio Bitrate";
+            // 
+            // textAudioBitrate
+            // 
+            this.textAudioBitrate.Location = new System.Drawing.Point(452, 229);
+            this.textAudioBitrate.Name = "textAudioBitrate";
+            this.textAudioBitrate.Size = new System.Drawing.Size(91, 20);
+            this.textAudioBitrate.TabIndex = 17;
+            // 
+            // chkAudCustomBr
+            // 
+            this.chkAudCustomBr.AutoSize = true;
+            this.chkAudCustomBr.Location = new System.Drawing.Point(452, 179);
+            this.chkAudCustomBr.Name = "chkAudCustomBr";
+            this.chkAudCustomBr.Size = new System.Drawing.Size(94, 17);
+            this.chkAudCustomBr.TabIndex = 16;
+            this.chkAudCustomBr.Text = "Custom Bitrate";
+            this.chkAudCustomBr.UseVisualStyleBackColor = true;
+            this.chkAudCustomBr.CheckedChanged += new System.EventHandler(this.chkAudCustomBr_CheckedChanged);
+            // 
+            // chkEncodeAud
+            // 
+            this.chkEncodeAud.AutoSize = true;
+            this.chkEncodeAud.Location = new System.Drawing.Point(452, 111);
+            this.chkEncodeAud.Name = "chkEncodeAud";
+            this.chkEncodeAud.Size = new System.Drawing.Size(133, 17);
+            this.chkEncodeAud.TabIndex = 15;
+            this.chkEncodeAud.Text = "Encode Audio To AAC";
+            this.chkEncodeAud.UseVisualStyleBackColor = true;
+            this.chkEncodeAud.CheckedChanged += new System.EventHandler(this.chkEncodeAud_CheckedChanged);
+            // 
+            // chkCopyAud
+            // 
+            this.chkCopyAud.AutoSize = true;
+            this.chkCopyAud.Location = new System.Drawing.Point(452, 74);
+            this.chkCopyAud.Name = "chkCopyAud";
+            this.chkCopyAud.Size = new System.Drawing.Size(80, 17);
+            this.chkCopyAud.TabIndex = 14;
+            this.chkCopyAud.Text = "Copy Audio";
+            this.chkCopyAud.UseVisualStyleBackColor = true;
+            this.chkCopyAud.CheckedChanged += new System.EventHandler(this.chkCopyAud_CheckedChanged);
             // 
             // textMaxVidBr
             // 
@@ -360,6 +450,36 @@
             this.tabPage3.Text = "Renaming";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(103, 231);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(436, 31);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "with _converted.mkv on the end.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(90, 200);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(462, 31);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Output filename will be the original";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(110, 38);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(422, 31);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Renaming still to be completed.";
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.butConvert);
@@ -382,121 +502,25 @@
             this.butConvert.UseVisualStyleBackColor = true;
             this.butConvert.Click += new System.EventHandler(this.button2_Click);
             // 
-            // chkCopyAud
+            // butSelectAll
             // 
-            this.chkCopyAud.AutoSize = true;
-            this.chkCopyAud.Location = new System.Drawing.Point(452, 74);
-            this.chkCopyAud.Name = "chkCopyAud";
-            this.chkCopyAud.Size = new System.Drawing.Size(80, 17);
-            this.chkCopyAud.TabIndex = 14;
-            this.chkCopyAud.Text = "Copy Audio";
-            this.chkCopyAud.UseVisualStyleBackColor = true;
-            this.chkCopyAud.CheckedChanged += new System.EventHandler(this.chkCopyAud_CheckedChanged);
+            this.butSelectAll.Location = new System.Drawing.Point(517, 331);
+            this.butSelectAll.Name = "butSelectAll";
+            this.butSelectAll.Size = new System.Drawing.Size(124, 23);
+            this.butSelectAll.TabIndex = 7;
+            this.butSelectAll.Text = "Select All";
+            this.butSelectAll.UseVisualStyleBackColor = true;
+            this.butSelectAll.Click += new System.EventHandler(this.butSelectAll_Click);
             // 
-            // chkEncodeAud
+            // butSelectNone
             // 
-            this.chkEncodeAud.AutoSize = true;
-            this.chkEncodeAud.Location = new System.Drawing.Point(452, 111);
-            this.chkEncodeAud.Name = "chkEncodeAud";
-            this.chkEncodeAud.Size = new System.Drawing.Size(133, 17);
-            this.chkEncodeAud.TabIndex = 15;
-            this.chkEncodeAud.Text = "Encode Audio To AAC";
-            this.chkEncodeAud.UseVisualStyleBackColor = true;
-            this.chkEncodeAud.CheckedChanged += new System.EventHandler(this.chkEncodeAud_CheckedChanged);
-            // 
-            // chkAudCustomBr
-            // 
-            this.chkAudCustomBr.AutoSize = true;
-            this.chkAudCustomBr.Location = new System.Drawing.Point(452, 179);
-            this.chkAudCustomBr.Name = "chkAudCustomBr";
-            this.chkAudCustomBr.Size = new System.Drawing.Size(94, 17);
-            this.chkAudCustomBr.TabIndex = 16;
-            this.chkAudCustomBr.Text = "Custom Bitrate";
-            this.chkAudCustomBr.UseVisualStyleBackColor = true;
-            this.chkAudCustomBr.CheckedChanged += new System.EventHandler(this.chkAudCustomBr_CheckedChanged);
-            // 
-            // textAudioBitrate
-            // 
-            this.textAudioBitrate.Location = new System.Drawing.Point(452, 229);
-            this.textAudioBitrate.Name = "textAudioBitrate";
-            this.textAudioBitrate.Size = new System.Drawing.Size(91, 20);
-            this.textAudioBitrate.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(449, 213);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Audio Bitrate";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(313, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "kbps";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(313, 256);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "kbps";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(549, 232);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "kbps";
-            // 
-            // chkCopySubs
-            // 
-            this.chkCopySubs.AutoSize = true;
-            this.chkCopySubs.Location = new System.Drawing.Point(452, 294);
-            this.chkCopySubs.Name = "chkCopySubs";
-            this.chkCopySubs.Size = new System.Drawing.Size(107, 17);
-            this.chkCopySubs.TabIndex = 22;
-            this.chkCopySubs.Text = "Copy All Subtitles";
-            this.chkCopySubs.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(110, 38);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(422, 31);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Renaming still to be completed.";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(90, 200);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(462, 31);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Output filename will be the original";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(103, 231);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(436, 31);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "with _converted.mkv on the end.";
+            this.butSelectNone.Location = new System.Drawing.Point(379, 331);
+            this.butSelectNone.Name = "butSelectNone";
+            this.butSelectNone.Size = new System.Drawing.Size(126, 23);
+            this.butSelectNone.TabIndex = 8;
+            this.butSelectNone.Text = "Select None";
+            this.butSelectNone.UseVisualStyleBackColor = true;
+            this.butSelectNone.Click += new System.EventHandler(this.butSelectNone_Click);
             // 
             // Form1
             // 
@@ -561,6 +585,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button butSelectNone;
+        private System.Windows.Forms.Button butSelectAll;
     }
 }
 
