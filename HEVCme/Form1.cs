@@ -21,13 +21,13 @@ namespace HEVCme
             InitializeComponent();
         }
         string workDir = "";
-        private void getFileInfo()
+        private void getFileInfo(string myFile)
         {
             //Initilaizing MediaInfo
             MediaInfo MI = new MediaInfo();
 
             //From: preparing an example file for reading
-            FileStream From = new FileStream("test.mp4", FileMode.Open, FileAccess.Read);
+            FileStream From = new FileStream(myFile, FileMode.Open, FileAccess.Read);
 
             //From: preparing a memory buffer for reading
             byte[] From_Buffer = new byte[64 * 1024];
@@ -63,9 +63,12 @@ namespace HEVCme
             MI.Open_Buffer_Finalize(); //This is the end of the stream, MediaInfo must finnish some work
 
             //Get() example
-            string myOutpt = "";
-            myOutpt += "Resolution is " + MI.Get(StreamKind.Video, 0, "Width") + "x" + MI.Get(StreamKind.Video, 0, "Height") + "\r\n";
-            myOutpt += "Video Format is " + MI.Get(StreamKind.Video, 0, "Format") + "\r\n";
+            string itemWidth = MI.Get(StreamKind.Video, 0, "Width");
+            string itemHeight = MI.Get(StreamKind.Video, 0, "Height");
+            string itemFormat = MI.Get(StreamKind.Video, 0, "Format");
+            string itemAudFormat = MI.Get(StreamKind.Audio, 0, "Format");
+            string itemAudChans = MI.Get(StreamKind.Audio, 0, "Channels");
+            string myOutpt = itemWidth + "\r\n" + itemHeight + "\r\n" + itemFormat + "\r\n" + itemAudFormat + "\r\n" + itemAudChans + "\r\n"; ;
             richTextBox1.Text = myOutpt;
         }
         private void convertIt(string ffmpegsetup)
@@ -328,7 +331,7 @@ namespace HEVCme
 
         private void butMedInf_Click(object sender, EventArgs e)
         {
-            getFileInfo();
+            getFileInfo("test.mp4");
         }
     }
 }
