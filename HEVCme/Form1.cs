@@ -27,7 +27,7 @@ namespace HEVCme
             MediaInfo MI = new MediaInfo();
 
             //From: preparing an example file for reading
-            FileStream From = new FileStream("test.mkv", FileMode.Open, FileAccess.Read);
+            FileStream From = new FileStream("test.mp4", FileMode.Open, FileAccess.Read);
 
             //From: preparing a memory buffer for reading
             byte[] From_Buffer = new byte[64 * 1024];
