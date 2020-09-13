@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MediaInfoLib;
 
 namespace HEVCme
 {
@@ -18,6 +19,54 @@ namespace HEVCme
         public Form1()
         {
             InitializeComponent();
+        }
+        string workDir = "";
+        private void getFileInfo()
+        {
+            //Initilaizing MediaInfo
+            MediaInfo MI = new MediaInfo();
+
+            //From: preparing an example file for reading
+            FileStream From = new FileStream("test.mkv", FileMode.Open, FileAccess.Read);
+
+            //From: preparing a memory buffer for reading
+            byte[] From_Buffer = new byte[64 * 1024];
+            int From_Buffer_Size; //The size of the read file buffer
+
+            //Preparing to fill MediaInfo with a buffer
+            MI.Open_Buffer_Init(From.Length, 0);
+
+            //The parsing loop
+            do
+            {
+                //Reading data somewhere, do what you want for this.
+                From_Buffer_Size = From.Read(From_Buffer, 0, 64 * 1024);
+
+                //Sending the buffer to MediaInfo
+                System.Runtime.InteropServices.GCHandle GC = System.Runtime.InteropServices.GCHandle.Alloc(From_Buffer, System.Runtime.InteropServices.GCHandleType.Pinned);
+                IntPtr From_Buffer_IntPtr = GC.AddrOfPinnedObject();
+                Status Result = (Status)MI.Open_Buffer_Continue(From_Buffer_IntPtr, (IntPtr)From_Buffer_Size);
+                GC.Free();
+                if ((Result & Status.Finalized) == Status.Finalized)
+                    break;
+
+                //Testing if MediaInfo request to go elsewhere
+                if (MI.Open_Buffer_Continue_GoTo_Get() != -1)
+                {
+                    Int64 Position = From.Seek(MI.Open_Buffer_Continue_GoTo_Get(), SeekOrigin.Begin); //Position the file
+                    MI.Open_Buffer_Init(From.Length, Position); //Informing MediaInfo we have seek
+                }
+            }
+            while (From_Buffer_Size > 0);
+
+            //Finalizing
+            MI.Open_Buffer_Finalize(); //This is the end of the stream, MediaInfo must finnish some work
+
+            //Get() example
+            string myOutpt = "";
+            myOutpt += "Resolution is " + MI.Get(StreamKind.Video, 0, "Width") + "x" + MI.Get(StreamKind.Video, 0, "Height") + "\r\n";
+            myOutpt += "Video Format is " + MI.Get(StreamKind.Video, 0, "Format") + "\r\n";
+            richTextBox1.Text = myOutpt;
         }
         private void convertIt(string ffmpegsetup)
         {
@@ -45,6 +94,7 @@ namespace HEVCme
                 DialogResult dialogResult = fbd.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
+                    workDir += fbd.SelectedPath.ToString();
                     if (findAvi.CheckState == CheckState.Checked)
                     {
                         string[] aviFiles = Directory.GetFiles(fbd.SelectedPath, "*.avi", SearchOption.TopDirectoryOnly);
@@ -253,7 +303,9 @@ namespace HEVCme
             {
                 for (int j=0; j < selectedFiles.Count; j++)
                 {
-                    convertIt("-n -i \"" + selectedFiles[j] + "\" " + ffargs + "\"" + selectedFiles[j] + "_converted.mkv\"");
+                    string renameThis = selectedFiles[j].ToString().Split('\\').Last();
+                    MessageBox.Show(renameThis + " - " + workDir);
+                    MessageBox.Show("-n -i \"" + selectedFiles[j] + "\" " + ffargs + "\"" + selectedFiles[j] + "_converted.mkv\"");
                 }
             }
         }
@@ -272,6 +324,11 @@ namespace HEVCme
             {
                 checkedFilesList.SetItemChecked(a, false);
             }
+        }
+
+        private void butMedInf_Click(object sender, EventArgs e)
+        {
+            getFileInfo();
         }
     }
 }
